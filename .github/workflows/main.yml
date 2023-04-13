@@ -14,3 +14,11 @@ jobs:
         with:
           test-results-junit: test-results/results.xml
           code-coverage-cobertura: code-coverage/coverage.xml
+
+      - name: Upload Test Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: unit test artifacts
+          path: |
+            test-results/results.xml
+            code-coverage/coverage.xml
